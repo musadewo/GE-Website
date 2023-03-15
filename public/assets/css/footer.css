@@ -1,0 +1,171 @@
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+@media (max-height:800px) {
+    footer {
+        position: static;
+    }
+    header {
+        padding-top: 40px;
+    }
+}
+
+.footer-css {
+    background-color: #4E6E81;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+}
+
+.footer-css .footer-kiri, .footer-css .footer-tengah, .footer-css .footer-kanan {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-css .footer-kiri {
+    width: 30%;
+}
+
+.footer-css h3 {
+    color: #ffffff;
+    font: normal 36px 'Cookie', cursive;
+    margin: 0;
+}
+
+
+.footer-css h3 span {
+    color: #e0ac1c;
+}
+
+/* Footer links */
+
+.footer-css .footer-links {
+    color: #ffffff;
+    margin: 20px 0 12px;
+}
+
+.footer-css .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-css .footer-nama-company {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+/* Footer Center */
+
+.footer-css .footer-tengah {
+    width: 35%;
+}
+
+.footer-css .footer-tengah i {
+    background-color: #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-css .footer-tengah i.fa-envelope {
+    font-size: 17px;
+    line-height: 38px;
+}
+
+.footer-css .footer-tengah p {
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-css .footer-tengah p span {
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+.footer-css .footer-tengah p a {
+    color: #ffffff;
+    text-decoration: none;
+    ;
+}
+
+/* Footer Right */
+
+.footer-css .footer-kanan {
+    width: 30%;
+}
+
+.footer-css .footer-tentang-company {
+    line-height: 20px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-css .footer-tentang-company span {
+    display: block;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-css .footer-icons {
+    margin-top: 25px;
+}
+
+.footer-css .footer-icons a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer-css .footer-icons a:hover {
+    background-color: #3E54AC;
+}
+
+.footer-links a:hover {
+    color: #3E54AC;
+}
+
+@media (max-width: 880px) {
+    .footer-css .footer-kiri, .footer-css .footer-tengah, .footer-css .footer-kanan {
+        display: block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .footer-css .footer-tengah i {
+        margin-left: 0;
+    }
+}
