@@ -10,23 +10,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Layanan
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Perbaikan</a></li>
-                    <li><a class="dropdown-item" href="#">Pemeriksaan</a></li>
-                    <li><a class="dropdown-item" href="#">Jual/Beli</a></li>
-            </ul>
-        </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Tentang</a>
+                    <a class="nav-link {{ Request::is('/') ? 'menu-active' : '' }} " aria-current="page" href="/">Home</a>
+            </li><li class="nav-item">
+                <a class="nav-link {{ Request::is('service') ? 'menu-active' : '' }} " href="/service">Service</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Kontak</a>
+                <a class="nav-link {{ Request::is('about') ? 'menu-active' : '' }} " href="/about">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('contact') ? 'menu-active' : '' }} " href="/contact">Contact</a>
             </li>
         </ul>
         <form class="d-flex">

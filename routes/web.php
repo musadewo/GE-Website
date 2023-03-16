@@ -15,5 +15,32 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('home.index');
-    return view('home.layouts.wrapper');
+    $data = [
+        'content' => 'home/home/index'
+    ];
+    return view('home.layouts.wrapper', $data);
+});
+
+Route::get('/service', function () {
+    // return view('home.index');
+    $data = [
+        'content' => 'home/service/index'
+    ];
+    return view('home.layouts.wrapper', $data);
+});
+
+Route::get('/about', function () {
+    // return view('home.index');
+    $data = [
+        'content' => 'home/about/index'
+    ];
+    return view('home.layouts.wrapper', $data);
+});
+
+Route::get('/contact', function () {
+    // return view('home.index');
+    $data = [
+        'content' => 'home/contact/index'
+    ];
+    return view('home.layouts.wrapper', $data);
 });

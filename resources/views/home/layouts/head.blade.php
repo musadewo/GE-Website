@@ -12,5 +12,7 @@
         {{-- CSS Sendiri --}}
         <link rel="stylesheet" href="{{ asset('assets/css/font.css')}}">
         <link rel="stylesheet" href="{{ asset('assets/css/footer.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/css/header.css')}}">
+        <link rel="stylesheet" href="{{ asset('assets/css/home.css')}}">
     </head>
     <body>

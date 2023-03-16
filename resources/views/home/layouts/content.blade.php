@@ -1,1 +1,3 @@
-<h1>hasdasd</h1>
+@if ($content)
+    @include($content)
+@endif

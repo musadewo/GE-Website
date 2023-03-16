@@ -4,11 +4,11 @@
         <p class="footer-links">
             <a href="#">Home</a>
             |
+            <a href="#">Services</a>
+            |
             <a href="#">About</a>
             |
             <a href="#">Contact</a>
-            |
-            <a href="#">Blog</a>
         </p>
         <p class="footer-nama-company">Copyright © 2023 <strong>Global Elektronik</strong> All rights reserved</p>
     </div>
@@ -29,7 +29,7 @@
     </div>
     <div class="footer-kanan">
         <p class="footer-tentang-company">
-            <span>Tentang Perusahaan</span>
+            <span>Tentang Kami</span>
             <strong>Global Elektronik</strong>
         </p>
         <div class="footer-icons">

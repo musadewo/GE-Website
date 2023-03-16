@@ -1,0 +1,9 @@
+.wrapper-img-carousel {
+    height: 100%;
+    position: relative;
+}
+.img-carousel{
+    max-width: 100%;
+    background-position: center;
+    background-size: cover;
+}
