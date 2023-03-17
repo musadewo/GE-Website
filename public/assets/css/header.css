@@ -1,4 +1,7 @@
 .menu-active {
-    color: black !important;
+    color: white !important;
     font-weight: bold;
+}
+.putih{
+    background-color: #4E6E81 !important;
 }

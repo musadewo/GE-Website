@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-lg bg-body-tertiary putih">
+    <div class="container">
+        <a class="navbar-brand text-white" href="/">
             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" alt="Bootstrap" width="30" height="24">
             Global Elektronik
         </a>

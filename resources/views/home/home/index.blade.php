@@ -1,51 +1,51 @@
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+{{-- Hero Section / Bagian Hero --}}
+<div class="container col-xxl-8 px-1 py-2">
+    <div class="row flex-lg-row-reverse align-items-center g-3 py-3">
+        <div class="col-10 col-sm-8 col-lg-6">
+            <img src="{{ asset('assets/img/Featured-tv-screen-repair-cost.jpg')}}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+        <div class="col-lg-6">
+            <h1 class="display-6 fw-bold lh-1 mb-3">BUTUH JASA SERVICE ELEKTRONIK?</h1>
+            <p class="lead">Perangkat Elektronik Anda Rusak? Serahkan pada Ahlinya!</p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Hubungi Kami</button>
+            </div>
+        </div>
     </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="wrapper-img-carousel">
-        <img src="{{ asset('assets/img/repair-tv.jpg')}}" class="img-carousel">
-    </div>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>Example headline.</h1>
-            <p>Some representative placeholder content for the first slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="wrapper-img-carousel">
-            <img src="{{ asset('assets/img/tv-bracket.jpg')}}" class="img-carousel">
-        </div>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Some representative placeholder content for the second slide of the carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
+</div>
 
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>One more for good measure.</h1>
-            <p>Some representative placeholder content for the third slide of this carousel.</p>
-            <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
+{{-- Service Section / Bagian Services --}}
+<div class="container back-color">
+    <div class="heading text-center">
+        <h3>Layanan / Jasa</h3>
+        <p>Yang Kami Sediakan </p>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+    <div class="Service">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="box my-3 bg-light">
+                    <img src="{{ asset('assets/img/stb1.jpg')}}" class="img-fluid">
+                    <h3 class="my-3">STB</h3>
+                    <p class="text-justify">asdasdasdasdasd</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box m-1">
+                    <img src="{{ asset('assets/img/stb1.jpg')}}" class="img-fluid">
+                    <h3 class="my-3">STB</h3>
+                    <p class="text-justify">asdasdasdasdasd</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box m-1">
+                    <img src="{{ asset('assets/img/stb1.jpg')}}" class="img-fluid">
+                    <h3 class="my-3">STB</h3>
+                    <p class="text-justify">asdasdasdasdasd</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="" class="btn btn-primary btn-lg px-4 me-md-2">Jasa Lainnya</a>
+        </div>
+    </div>
+</div>
