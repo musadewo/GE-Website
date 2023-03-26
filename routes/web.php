@@ -16,31 +16,46 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     // return view('home.index');
     $data = [
-        'content' => 'home/home/index'
+        'content' => 'Frontend/home/index'
     ];
-    return view('home.layouts.wrapper', $data);
+    return view('Frontend.layouts.wrapper', $data);
 });
 
 Route::get('/service', function () {
     // return view('home.index');
     $data = [
-        'content' => 'home/service/index'
+        'content' => 'Frontend/service/index'
     ];
-    return view('home.layouts.wrapper', $data);
+    return view('Frontend.layouts.wrapper', $data);
 });
 
 Route::get('/about', function () {
     // return view('home.index');
     $data = [
-        'content' => 'home/about/index'
+        'content' => 'Frontend/about/index'
     ];
-    return view('home.layouts.wrapper', $data);
+    return view('Frontend.layouts.wrapper', $data);
 });
 
 Route::get('/contact', function () {
     // return view('home.index');
     $data = [
-        'content' => 'home/contact/index'
+        'content' => 'Frontend/contact/index'
     ];
-    return view('home.layouts.wrapper', $data);
+    return view('Frontend.layouts.wrapper', $data);
+});
+
+Route::get('/login', function () {
+    // return view('home.index');
+    $data = [
+        'content' => 'Frontend/auth/login'
+    ];
+    return view('Frontend.layouts.wrapper', $data);
+});
+
+// Admin Route
+Route::prefix('/admin')->group(function(){
+    Route::get('/dashboard', function(){
+        return view('admin.index');
+    });
 });
