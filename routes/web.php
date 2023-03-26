@@ -56,6 +56,6 @@ Route::get('/login', function () {
 // Admin Route
 Route::prefix('/admin')->group(function(){
     Route::get('/dashboard', function(){
-        return view('admin.index');
+        return view('admin.layouts.wrapper');
     });
 });
