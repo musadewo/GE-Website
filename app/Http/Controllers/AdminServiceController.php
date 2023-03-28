@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Service;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class AdminUserController extends Controller
+class AdminServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,9 @@ class AdminUserController extends Controller
     public function index()
     {
         $data = [
-            'title' => 'Manajemen User Admin',
-            'user'  => User::get(),
-            'content' => 'admin/user/index'
+            'title' => 'Manajemen Service Admin',
+            'service'  => Service::get(),
+            'content' => 'admin/service/index'
         ];
         return view('admin.layouts.wrapper', $data);
     }
@@ -28,8 +27,8 @@ class AdminUserController extends Controller
     public function create()
     {
         $data = [
-            'title' => 'Tambah User Admin',
-            'content' => 'admin/user/add'
+            'title' => 'Tambah Service Admin',
+            'content' => 'admin/service/add'
         ];
         return view('admin.layouts.wrapper', $data);
     }
@@ -41,15 +40,23 @@ class AdminUserController extends Controller
     {
         // dd($request->all());
         $data = $request->validate([
-            'name' => 'required',
-            'email' => 'required|unique:users',
-            'password' => 'required',
-            're_password' => 'required:same:password'
+            'title' => 'required',
+            'desc' => 'required',
+            'gambar' => 'required',
         ]);
-        $data['password'] = Hash::make($data['password']);
-        User::create($data);
+        // Upload Gambar
+        if($request->hasFile('gambar')){
+            $gambar = $request->file('gambar');
+            $file_name = time() . '-' . $gambar->getClientOriginalName();
+            $storage = 'uploads/services/';
+            $gambar->move($storage, $file_name);
+            $data['gambar'] = $storage . $file_name;
+        } else {
+            $data['gambar'] = null;
+        }
+        Service::create($data);
         Alert::success('Sukses', 'Data Berhasil ditambah');
-        return redirect('/admin/user');
+        return redirect('/admin/service');
     }
 
     /**
@@ -66,9 +73,9 @@ class AdminUserController extends Controller
     public function edit(string $id)
     {
         $data = [
-            'title' => 'Edit User Admin',
-            'user' => User::find($id),
-            'content' => 'admin/user/add'
+            'title' => 'Edit Service Admin',
+            'service' => Service::find($id),
+            'content' => 'admin/service/add'
         ];
         return view('admin.layouts.wrapper', $data);
     }
@@ -78,21 +85,21 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $user = User::find($id);
+        $service = Service::find($id);
         $data = $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:users,email,'.$user->id,
+            'email' => 'required|unique:services,email,'.$service->id,
             // 'password' => 'min:3',
             're_password' => 'same:password'
         ]);
         if($request->password){
             $data['password'] = Hash::make($data['password']);
         } else {
-            $data['password'] = $user->password;
+            $data['password'] = $service->password;
         }
-        $user->update($data);
+        $service->update($data);
         Alert::success('Sukses', 'Data Berhasil diupdate');
-        return redirect('/admin/user');
+        return redirect('/admin/service');
     }
 
     /**
@@ -100,9 +107,9 @@ class AdminUserController extends Controller
      */
     public function destroy(string $id)
     {
-        $user = User::find($id);
-        $user->delete();
+        $service = Service::find($id);
+        $service->delete();
         Alert::success('Sukses', 'Data Berhasil dihapus');
-        return redirect('/admin/user');
+        return redirect('/admin/service');
     }
 }
