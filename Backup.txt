@@ -32,3 +32,57 @@
         </div>
     </div>
 </div>
+
+<div class="container my-5">
+    <div class="text-center">
+        <h4>Hubungi Kami</h4>
+        <p>Anda Dapat Bertanya Langsung ke Kami</p>
+        <a href="" class="btn btn-primary px-5" target="blank"><i class="fas fa-phone"></i> Hubungi Kami di Whatsapp</a>
+    </div>
+</div>
+
+<div class = "contact-form">
+            <form>
+                <div>
+                <input type = "text" class = "form-control" placeholder="Nama">
+                <input type = "number" class = "form-control" placeholder="Nomor Telepon">
+                </div>
+                <div>
+                <input type = "text" class = "form-control" placeholder="Alamat">
+                <input type = "text" class = "form-control" placeholder="Kerusakan">
+                </div>
+                <label for="" class="">Masukkan Gambar Kerusakan</label>
+                <input type="file" class="form-control" placeholder="Gambar">
+                <button class="btn btn-primary mx-2"><i class="fas fa-paper-plane-top"></i> Kirim Pesan</button>
+                <input type = "submit" class = "send-btn" value = "send message">
+            </form>
+            <div>
+                <img src = "{{ asset('assets/img/contact.jpg')}}" alt = "">
+            </div>
+        </div>
+
+Route::get('/login', [AdminAuthController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login/do', [AdminAuthController::class, 'doLogin']);
+
+// Admin Route
+Route::prefix('/admin')->middleware('auth')->group(function(){
+    Route::get('/logout', [AdminAuthController::class, 'logout']);
+    Route::get('/dashboard', [AdminDashboardController::class, 'index']);
+    Route::resource('/pesan', AdminPesanController::class);
+    Route::resource('/service', AdminServiceController::class);
+    Route::resource('/banner', AdminBannerController::class);
+    Route::resource('/user', AdminUserController::class);
+});
+
+function doLogin(Request $request){
+        // dd($request->all());
+        $data = $request->validate([
+            'username' => 'required',
+            'password' => 'required',
+        ]);
+        if(Auth::attempt($data)){
+            $request->session()->regenerate();
+            return redirect('admin/dashboard');
+        }
+        return back()->with('loginError','Gagal Login, Username atau Password Salah');
+    }

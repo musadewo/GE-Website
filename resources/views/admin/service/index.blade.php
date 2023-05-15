@@ -14,7 +14,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->title}}</td>
-                        <td>{{ $item->desc}}</td>
+                        <td>{!! $item->desc !!}</td>
                         <td><img src="/{{ $item->gambar }}" width="200px" alt=""></td>
                         <td>
                             <div class="d-flex">

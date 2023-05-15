@@ -10,9 +10,18 @@
                 @endif
                     @csrf
                     <div class="form-group">
-                        <label for="">Username</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Username" value="{{ isset($user) ? $user->name : old('name')}}">
+                        <label for="">Nama</label>
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama" value="{{ isset($user) ? $user->name : old('name')}}">
                         @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="">Username</label>
+                        <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="Username" value="{{ isset($user) ? $user->username : old('username')}}">
+                        @error('username')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -45,7 +54,8 @@
                             </div>
                         @enderror
                     </div>
-                    <button type="submit" class="btn btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-floppy-disk mr-2"></i>Simpan</button>
+                    <a href="/admin/user" class="btn btn-primary ml-2"><i class="fa-solid fa-arrow-left mr-2"></i>Kembali</a>
                 </form>
             </div>
         </div>

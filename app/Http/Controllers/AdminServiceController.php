@@ -85,18 +85,26 @@ class AdminServiceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $service = Service::find($id);
-        $data = $request->validate([
-            'name' => 'required',
-            'email' => 'required|unique:services,email,'.$service->id,
-            // 'password' => 'min:3',
-            're_password' => 'same:password'
-        ]);
-        if($request->password){
-            $data['password'] = Hash::make($data['password']);
-        } else {
-            $data['password'] = $service->password;
+        // dd($request->all());
+       $service = Service::find($id);
+       $data = $request->validate([
+        'title' => 'required',
+        'desc' => 'required',
+        // 'gambar' => 'required',
+    ]);
+    // Upload Gambar
+    if($request->hasFile('gambar')){
+        if($service->gambar != null){
+            unlink($service->gambar);
         }
+        $gambar = $request->file('gambar');
+        $file_name = time() . '-' . $gambar->getClientOriginalName();
+        $storage = 'uploads/services/';
+        $gambar->move($storage, $file_name);
+        $data['gambar'] = $storage . $file_name;
+    } else {
+        $data['gambar'] = $service->gambar;
+    }
         $service->update($data);
         Alert::success('Sukses', 'Data Berhasil diupdate');
         return redirect('/admin/service');
@@ -108,6 +116,9 @@ class AdminServiceController extends Controller
     public function destroy(string $id)
     {
         $service = Service::find($id);
+        if($service->gambar != null){
+            unlink($service->gambar);
+        }
         $service->delete();
         Alert::success('Sukses', 'Data Berhasil dihapus');
         return redirect('/admin/service');

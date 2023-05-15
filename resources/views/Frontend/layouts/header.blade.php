@@ -22,7 +22,11 @@
             </li>
         </ul>
         <form class="d-flex">
-            <a href="/login" class="btn btn-primary"><i class="fa-solid fa-user-shield"></i> Login</a>
+            @auth
+            <a href="/admin/dashboard" class="btn btn-primary"><i class="fa-solid fa-user-shield"></i> Dashboard</a>
+            @else
+            <a href="/login" class="btn btn-primary"><i class="fa-solid fa-user"></i> Login</a>
+            @endauth
         </form>
     </div>
 </div>

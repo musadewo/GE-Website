@@ -1,0 +1,62 @@
+.contact-bg{
+    text-align: center;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-body{
+    max-width: 1320px;
+}
+.contact-info{
+    text-align: center;
+}
+.contact-info span{
+    display: block;
+}
+.contact-info div{
+    margin: 0.8rem 0;
+}
+.contact-info span .fas{
+    font-size: 2rem;
+    padding-bottom: 0.9rem;
+    color: blue;
+}
+.contact-info div span:nth-child(2){
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.contact-info .text{
+    padding-top: 0.4rem;
+}
+/* Buat bagian Whatsapp */
+.contact {
+    padding: 50px 0;
+  }
+
+  .contact h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .contact-info-wa a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .contact-info-wa a:hover {
+    background-color: #128c7e;
+  }
+
+  .contact-info-wa i {
+    font-size: 24px;
+    margin-right: 10px;
+  }

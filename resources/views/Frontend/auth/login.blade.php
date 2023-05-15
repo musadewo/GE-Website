@@ -10,7 +10,11 @@
                         <strong><h4>LOGIN ADMINISTRATOR</h4></strong>
                         <p>Login hanya untuk Administrator</p>
                     </div>
-                    <form action="">
+                    @if (session()->has('loginError'))
+                        <div class="alert alert-danger">{{ session('loginError')}}</div>
+                    @endif
+                    <form action="/login/do" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for=""><b>Username</b></label>
                             <input type="text" name="username" class="form-control" placeholder="Username">

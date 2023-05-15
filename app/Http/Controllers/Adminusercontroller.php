@@ -42,6 +42,7 @@ class AdminUserController extends Controller
         // dd($request->all());
         $data = $request->validate([
             'name' => 'required',
+            'username' => 'required|unique:users',
             'email' => 'required|unique:users',
             'password' => 'required',
             're_password' => 'required:same:password'
@@ -81,8 +82,9 @@ class AdminUserController extends Controller
         $user = User::find($id);
         $data = $request->validate([
             'name' => 'required',
+            'username' => 'required|unique:users,username,'.$user->id,
             'email' => 'required|unique:users,email,'.$user->id,
-            // 'password' => 'min:3',
+            'password' => 'min:3',
             're_password' => 'same:password'
         ]);
         if($request->password){

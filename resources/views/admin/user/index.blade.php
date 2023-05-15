@@ -7,6 +7,7 @@
                     <tr>
                         <td>No</td>
                         <td>Name</td>
+                        <td>Username</td>
                         <td>Email</td>
                         <td>Action</td>
                     </tr>
@@ -14,6 +15,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->name}}</td>
+                        <td>{{ $item->username }}</td>
                         <td>{{ $item->email}}</td>
                         <td>
                             <div class="d-flex">
